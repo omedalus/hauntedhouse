@@ -28,12 +28,28 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
           data-ng-show="true || ctrl.gamestate.statename == 'lobby'">
         <h2>Lobby</h2>
         <button data-ng-click="generateHouse()">Generate house</button>
-        {{ctrl.gamestate}}
       </div>
+
       <div id="roomdisplay" data-ng-controller="RoomCtrl">
         <h2>Room</h2>
-        {{ctrl.gamestate.house.adjacencies[ctrl.gamestate.currentRoom]}}
+        <div class="roomflavor">
+          {{ctrl.getFlavor()}}
+        </div>
+        
+        <div class="col-sm-2 roomside roomside-left"></div>
+
+        <div class="room row col-sm-8">
+          <div class="roomdoor"
+              data-ng-repeat="doordirection in ['N', 'E', 'S', 'W']"
+              data-ng-class="'doordirection-' + doordirection">
+            {{doordirection}}:
+            {{ctrl.getDoors(doordirection)}}
+          </div>
+        </div>
+        
+        <div class="col-sm-2 roomside roomside-right"></div>
       </div>
+
     </article>
   </body>
 </html>

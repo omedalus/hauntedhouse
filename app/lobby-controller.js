@@ -137,7 +137,6 @@ appHauntedHouse.controller('LobbyCtrl', [
     gamestate.roomFlavor = _.map(_.range(gamestate.house.numNodes), function() { return {}; });
 
     decorateHouse();
-    console.log(_.pluck(gamestate.roomFlavor, 'roomName'))
 
     gamestate.statename = 'playing';
   };
