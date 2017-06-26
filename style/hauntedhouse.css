@@ -52,7 +52,6 @@
 {
   height: 80%;
   top: 10%;
-  background: green;
 }
 .doordirection-E .doorsideholder,
 .doordirection-W .doorsideholder {
@@ -68,3 +67,14 @@
   vertical-align: middle;
 }
 
+.doorside.lastroom .doorimageholder {
+  border: 1px solid black;
+}
+
+
+.protagonist {
+  display: inline-block;
+  position: absolute;
+  border: 1px solid green;
+  background: #6f6;
+}

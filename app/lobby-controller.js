@@ -132,6 +132,7 @@ appHauntedHouse.controller('LobbyCtrl', [
   $scope.generateHouse = function() {
     gamestate.house = new SingleSolutionCoverageGraph($scope.difficulty);
     gamestate.currentRoom = 0;
+    gamestate.lastRoom = null;
     gamestate.numLampsLeft = gamestate.house.solutionNumActiveNodes;
 
     gamestate.roomFlavor = _.map(_.range(gamestate.house.numNodes), function() { return {}; });

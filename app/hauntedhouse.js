@@ -8,6 +8,7 @@ var appHauntedHouse = angular.module('appHauntedHouse', []);
     
     house: null,
     currentRoom: null,
+    lastRoom: null,
     lampsPlaced: [],
     numLampsLeft: 0,
     roomFlavor: [],

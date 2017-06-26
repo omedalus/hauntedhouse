@@ -45,15 +45,20 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
             <div class="doorsideholder">
               <div class="doorside"
-                  data-ng-repeat="adjroom in ctrl.getDoors(doordirection)">
+                  data-ng-repeat="adjroom in ctrl.getDoors(doordirection)"
+                  data-ng-class="ctrl.getDoorClasses(adjroom)">
                 <div class="doorimageholder">
                   <button class="btn"
-                      data-ng-click="ctrl.gamestate.currentRoom = adjroom">
+                      data-ng-click="ctrl.goToRoom(adjroom)">
                     {{adjroom}}
                   </button>
                 </div>
               </div>
             </div>
+          </div>
+          
+          <div class="protagonist">
+            :-)
           </div>
         </div>
         
