@@ -4,27 +4,67 @@
   border: 1px solid black;
   margin: auto;
   position: relative;
-  height: 240px;
+  height: 320px;
+  width: 480px;
 }
 
 .roomdoor {
   position: absolute;
+  overflow: hidden;
+}
+.doorsideholder {
+  display: table;
+  table-layout: fixed;
 }
 .doordirection-N {
-  left: 50%;
   top: 0;
 }
 .doordirection-E {
   right: 0;
-  top: 50%;
 }
 .doordirection-S {
   bottom: 0;
-  left: 50%;
 }
 .doordirection-W {
   left: 0;
-  top: 50%;
 }
 
+.doordirection-N,
+.doordirection-S {
+  left: 10%;
+  text-align: center;
+  width: 80%;
+  display: table;
+  table-layout: fixed;
+}
+.doordirection-N .doorsideholder,
+.doordirection-S .doorsideholder {
+  display: table-row;
+}
+.doordirection-N .doorside,
+.doordirection-S .doorside {
+  display: table-cell;
+  text-align: center;
+}
+
+.doordirection-E,
+.doordirection-W
+{
+  height: 80%;
+  top: 10%;
+  background: green;
+}
+.doordirection-E .doorsideholder,
+.doordirection-W .doorsideholder {
+  height: 100%;
+}
+.doordirection-E .doorside,
+.doordirection-W .doorside {
+  display: table-row;
+}
+.doordirection-E .doorimageholder,
+.doordirection-W .doorimageholder {
+  display: table-cell;
+  vertical-align: middle;
+}
 

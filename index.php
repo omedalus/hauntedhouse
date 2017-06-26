@@ -31,7 +31,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
       </div>
 
       <div id="roomdisplay" data-ng-controller="RoomCtrl">
-        <h2>Room</h2>
+        <h2>{{ctrl.getFlavor().roomName}}</h2>
         <div class="roomflavor">
           {{ctrl.getFlavor()}}
         </div>
@@ -42,16 +42,16 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
           <div class="roomdoor"
               data-ng-repeat="doordirection in ['N', 'E', 'S', 'W']"
               data-ng-class="'doordirection-' + doordirection">
-            {{doordirection}}:
-            {{ctrl.getDoors(doordirection)}}
-            
+
             <div class="doorsideholder">
               <div class="doorside"
                   data-ng-repeat="adjroom in ctrl.getDoors(doordirection)">
-                <button class="btn"
-                    data-ng-click="ctrl.gamestate.currentRoom = adjroom">
-                  {{adjroom}}
-                </button>
+                <div class="doorimageholder">
+                  <button class="btn"
+                      data-ng-click="ctrl.gamestate.currentRoom = adjroom">
+                    {{adjroom}}
+                  </button>
+                </div>
               </div>
             </div>
           </div>

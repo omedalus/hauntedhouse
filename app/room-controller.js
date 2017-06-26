@@ -27,22 +27,22 @@ appHauntedHouse.controller('RoomCtrl', [
     // West and North are lower-number rooms, East and South are higher.
     if (direction == 'N' || direction == 'W') {
       currentRoomAdjacencies = _.filter(currentRoomAdjacencies, function(adjroom) {
-        return adjroom < gamestate.currentRoom;
+        return (adjroom) < gamestate.currentRoom;
       });
     } else if (direction == 'S' || direction == 'E') {
       currentRoomAdjacencies = _.filter(currentRoomAdjacencies, function(adjroom) {
-        return adjroom > gamestate.currentRoom;
+        return (adjroom) > gamestate.currentRoom;
       });
     }
     
-    // North and South are even numbered rooms, East and West are odd.
+    // North and South are mutually even numbered rooms, East and West are mutually odd.
     if (direction == 'N' || direction == 'S') {
       currentRoomAdjacencies = _.filter(currentRoomAdjacencies, function(adjroom) {
-        return adjroom % 2 == 0;
+        return (adjroom + gamestate.currentRoom) % 2 == 0;
       });
     } else if (direction == 'E' || direction == 'W') {
       currentRoomAdjacencies = _.filter(currentRoomAdjacencies, function(adjroom) {
-        return adjroom % 2 == 1;
+        return (adjroom + gamestate.currentRoom) % 2 == 1;
       });
     }
     
